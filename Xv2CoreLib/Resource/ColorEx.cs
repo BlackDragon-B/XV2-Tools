@@ -1,5 +1,4 @@
-﻿using LB_Common.Numbers;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows.Media.Imaging;
@@ -268,6 +267,18 @@ namespace Xv2CoreLib.HslColor
             R_Multi = 1f - R_Multi;
             G_Multi = 1f - G_Multi;
             B_Multi = 1f - B_Multi;
+        }
+    }
+
+    public class CustomColor
+    {
+        public double R { get; internal set; }
+        public double G { get; internal set; }
+        public double B { get; internal set; }
+
+        internal bool IsWhiteOrBlack()
+        {
+            throw new NotImplementedException();
         }
     }
 

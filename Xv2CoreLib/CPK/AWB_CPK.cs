@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using UsefulThings;
 using Xv2CoreLib.UTF;
 using Xv2CoreLib.AFS2;
 using YAXLib;
 using _cpk = CriPakTools.CPK;
 using Xv2CoreLib.ACB;
 using Xv2CoreLib.Resource;
+using UsefulThings;
 
 namespace Xv2CoreLib.CPK
 {

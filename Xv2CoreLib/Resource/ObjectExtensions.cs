@@ -19,7 +19,9 @@ namespace System
 
             using (var ms = new MemoryStream())
             {
+                #pragma warning disable SYSLIB0011
                 IFormatter formatter = new BinaryFormatter();
+                #pragma warning restore SYSLIB0011
                 formatter.Serialize(ms, obj);
                 ms.Seek(0, SeekOrigin.Begin);
                 return (T)formatter.Deserialize(ms);

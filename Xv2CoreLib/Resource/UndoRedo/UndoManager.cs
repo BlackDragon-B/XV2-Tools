@@ -2,11 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 
-#if !SaveEditor
-using GalaSoft.MvvmLight.CommandWpf;
-#endif
-
-
 namespace Xv2CoreLib.Resource.UndoRedo
 {
     public sealed class UndoManager : INotifyPropertyChanged
@@ -123,12 +118,6 @@ namespace Xv2CoreLib.Resource.UndoRedo
 
             return false;
         }
-
-#if !SaveEditor
-        public RelayCommand RedoCommand => new RelayCommand(Redo, CanRedo);
-
-        public RelayCommand UndoCommand => new RelayCommand(Undo, CanUndo);
-#endif
 
         public void Undo()
         {

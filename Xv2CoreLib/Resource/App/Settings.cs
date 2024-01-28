@@ -136,7 +136,6 @@ namespace Xv2CoreLib.Resource.App
                 Settings.InitSettings();
 
                 SaveSettings();
-                UpdateEepkToolInterlop();
                 return;
             }
 #endif
@@ -168,7 +167,6 @@ namespace Xv2CoreLib.Resource.App
                 }
             }
 
-            UpdateEepkToolInterlop();
         }
 
         public void SaveSettings(bool errorIfFail = true)
@@ -201,16 +199,8 @@ namespace Xv2CoreLib.Resource.App
             }
 #endif
 
-            UpdateEepkToolInterlop();
         }
 
-        public void UpdateEepkToolInterlop()
-        {
-            EffectContainer.EepkToolInterlop.TextureImportMatchNames = TextureImportMatchNames;
-            EffectContainer.EepkToolInterlop.LoadTextures = LoadTextures;
-            EffectContainer.EepkToolInterlop.AutoRenameContainers = AutoContainerRename;
-            EffectContainer.EepkToolInterlop.AssetReuseMatchName = AssetReuseMatchName;
-        }
 
         /// <summary>
         /// Get current theme as a string formatted for MahApps.Metro 2.0+.

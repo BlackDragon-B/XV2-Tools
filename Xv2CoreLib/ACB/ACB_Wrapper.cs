@@ -8,10 +8,6 @@ using Xv2CoreLib.AFS2;
 using Xv2CoreLib.Resource.UndoRedo;
 using Xv2CoreLib.Resource;
 
-#if NvvmLight
-using GalaSoft.MvvmLight.CommandWpf;
-#endif
-
 namespace Xv2CoreLib.ACB
 {
     //Planned Features:
@@ -872,44 +868,6 @@ namespace Xv2CoreLib.ACB
         }
 
         #endregion
-
-#if NvvmLight
-        public RelayCommand CopyTrackCommand => new RelayCommand(CopyTrack);
-        private void CopyTrack()
-        {
-            if(SelectedTrack != null)
-            {
-                if(SelectedTrack.Type == TrackType.Track)
-                    WrapperRoot.CopyTrack(SelectedTrack);
-                else if (SelectedTrack.Type == TrackType.ActionTrack)
-                    WrapperRoot.CopyAction(SelectedTrack);
-            }
-        }
-
-        public RelayCommand PasteTrackCommand => new RelayCommand(PasteTrack, CanPasteTrackOrAction);
-        private void PasteTrack()
-        {
-            if (Clipboard.ContainsData(ACB_File.CLIPBOARD_ACB_TRACK))
-                WrapperRoot.UndoablePasteTrack(this);
-            else if (Clipboard.ContainsData(ACB_File.CLIPBOARD_ACB_ACTION))
-                WrapperRoot.UndoablePasteAction(this);
-        }
-
-        public RelayCommand DeleteTrackCommand => new RelayCommand(DeleteTrack);
-        private void DeleteTrack()
-        {
-            if (SelectedTrack != null)
-            {
-                UndoableDeleteTrack(SelectedTrack);
-            }
-        }
-
-
-        private bool CanPasteTrackOrAction()
-        {
-            return (WrapperRoot.CanPasteTrack() || WrapperRoot.CanPasteAction());
-        }
-#endif
 
         /// <summary>
         /// Creates a command for the sequence if required (Sequence-type cues only).

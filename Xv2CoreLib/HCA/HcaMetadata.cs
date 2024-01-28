@@ -2,7 +2,12 @@
 using System.IO;
 using VGAudio;
 using VGAudio.Cli;
+using LB_Common;
 using Xv2CoreLib.Resource;
+using static System.Windows.Forms.Design.AxImporter;
+using VGAudio.Containers;
+using VGAudio.Formats;
+using Options = VGAudio.Cli.Options;
 
 namespace Xv2CoreLib.HCA
 {
